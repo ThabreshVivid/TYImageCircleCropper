@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="3nJ-sS-Qoy">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+    </dependencies>
+    <scenes>
+        <!--Image Circle Cropper-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="unknown_edit" translatesAutoresizingMaskIntoConstraints="NO" id="zKt-nB-T62">
+                                <rect key="frame" x="100" y="224" width="120" height="120"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="120" id="0py-oB-E2n"/>
+                                    <constraint firstAttribute="width" constant="120" id="qMH-PF-gu6"/>
+                                </constraints>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jyL-eX-Hvb">
+                                <rect key="frame" x="0.0" y="532" width="320" height="36"/>
+                                <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="320" id="LS9-0h-yGu"/>
+                                    <constraint firstAttribute="height" constant="36" id="XHN-2O-Iea"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="AmericanTypewriter-Bold" family="American Typewriter" pointSize="15"/>
+                                <state key="normal" title="     Crop Photo">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="clickCrop:" destination="BYZ-38-t0r" eventType="touchUpInside" id="bgj-GH-RSk"/>
+                                </connections>
+                            </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="arrow_btm" translatesAutoresizingMaskIntoConstraints="NO" id="j0C-sD-M14">
+                                <rect key="frame" x="281" y="535" width="30" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="44X-0i-7YC"/>
+                                    <constraint firstAttribute="width" constant="30" id="XIO-3f-mha"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="j0C-sD-M14" secondAttribute="bottom" constant="3" id="3Lw-0W-Cg4"/>
+                            <constraint firstItem="zKt-nB-T62" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Ez2-Oh-Nj4"/>
+                            <constraint firstItem="zKt-nB-T62" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="X4f-tj-r6e"/>
+                            <constraint firstAttribute="trailing" secondItem="j0C-sD-M14" secondAttribute="trailing" constant="9" id="bfe-E3-f8d"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="jyL-eX-Hvb" secondAttribute="bottom" id="bzF-o8-vRa"/>
+                            <constraint firstAttribute="trailing" secondItem="jyL-eX-Hvb" secondAttribute="trailing" id="tJZ-cF-n1W"/>
+                            <constraint firstItem="jyL-eX-Hvb" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="vI0-Pf-ULK"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Image Circle Cropper" id="6KU-Yv-n8O"/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                    <connections>
+                        <outlet property="croppedImg" destination="zKt-nB-T62" id="bN0-1j-EP7"/>
+                        <segue destination="ORQ-Cz-VXj" kind="show" identifier="pushCrop" id="1Sl-n2-JII"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="210" y="342"/>
+        </scene>
+        <!--Crop Image-->
+        <scene sceneID="43h-zk-3Ym">
+            <objects>
+                <viewController storyboardIdentifier="CropImage" id="ORQ-Cz-VXj" customClass="CropImage" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="cMa-3Y-RhO"/>
+                        <viewControllerLayoutGuide type="bottom" id="qFc-ai-Qds"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="3Xt-QX-Zae">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="xqE-n5-RMI">
+                                <rect key="frame" x="0.0" y="64" width="320" height="504"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="qFc-ai-Qds" firstAttribute="top" secondItem="xqE-n5-RMI" secondAttribute="bottom" id="Kbq-LJ-9Lh"/>
+                            <constraint firstAttribute="trailing" secondItem="xqE-n5-RMI" secondAttribute="trailing" id="bay-FP-Dly"/>
+                            <constraint firstItem="xqE-n5-RMI" firstAttribute="leading" secondItem="3Xt-QX-Zae" secondAttribute="leading" id="d0h-Zs-ope"/>
+                            <constraint firstItem="xqE-n5-RMI" firstAttribute="top" secondItem="cMa-3Y-RhO" secondAttribute="bottom" id="hGg-EH-ZAm"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Crop Image" id="4I2-WX-feb">
+                        <barButtonItem key="rightBarButtonItem" title="Done" style="done" id="fPT-E8-jKp">
+                            <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <connections>
+                                <action selector="didTouchUpInsideSaveButton:" destination="ORQ-Cz-VXj" id="Mdq-uQ-f4b"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                    <connections>
+                        <outlet property="imageView" destination="xqE-n5-RMI" id="w6m-xs-3Rh"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="6Fl-eh-gm1" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="635" y="342"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="SoD-bo-LLt">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="3nJ-sS-Qoy" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Wlg-zf-Ye9">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <offsetWrapper key="textShadowOffset" horizontal="0.0" vertical="0.0"/>
+                        </textAttributes>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="p9d-IB-MLg"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="OMU-e2-sYm" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-183" y="342"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="arrow_btm" width="30" height="30"/>
+        <image name="unknown_edit" width="98" height="98"/>
+    </resources>
+</document>
