@@ -1,3 +1,2 @@
 # TYImageCircleCropper
-
-![untitled-4](https://cloud.githubusercontent.com/assets/18044565/18168214/4b1ae986-7072-11e6-84ae-1a8f58be516a.gif)
+![untitled-5](https://cloud.githubusercontent.com/assets/18044565/18168426/3166ea70-7073-11e6-9fa6-03c6bdda7452.gif)
